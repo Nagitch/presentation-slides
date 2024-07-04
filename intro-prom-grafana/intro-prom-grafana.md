@@ -2,15 +2,21 @@
 theme: black
 customTheme : "additional"
 enableMenu: true
+parallaxBackgroundImage: media/bg-mujina-prodx2.webp
 # parallaxBackgroundImage: https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg
+parallaxBackgroundSize: 3300px 3300px
 # parallaxBackgroundSize: 2100px 900px
-# parallaxBackgroundHorizontal: 200
-# parallaxBackgroundVertical: 50
+parallaxBackgroundHorizontal: 150
+parallaxBackgroundVertical: 50
 ---
 
 ## リアルタイムサーバーの<br>メトリクス可視化
 
 リアルタイム性が求められるサービスの<br>メトリクス収集・分析・監視ソリューション検討
+
+<div class="fs2rem text-right">
+<br> Kusanagi
+</div>
 
 ---
 
@@ -36,8 +42,8 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 
 - 一般的なWebサービスではデファクトスタンダードが存在する<br>-> ElasticSearchやPrometheus + Grafana
 - リアルタイムサーバーでは何を採用すべきか？
-    - **「デファクトはないっすね」** <br>
-      by 某大規模IPタイトルMMOゲームエンジニア
+- **「デファクトはないっすね」**
+    - by 某大規模IPタイトルMMOゲームエンジニア{.ls-none .fs2rem}
 
 ---
 
@@ -110,5 +116,9 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 
 ---
 
-## 採用事例の話
+## 実例の話
 
+---
+
+end
+<!-- end -->
