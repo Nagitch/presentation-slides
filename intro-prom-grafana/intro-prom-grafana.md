@@ -2,27 +2,25 @@
 theme: black
 customTheme : "additional"
 enableMenu: true
-parallaxBackgroundImage: media/bg-mujina-prodx2.webp
-# parallaxBackgroundImage: https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg
+parallaxBackgroundImage: assets/bg-mujina-prodx2.webp
 parallaxBackgroundSize: 3300px 3300px
-# parallaxBackgroundSize: 2100px 900px
 parallaxBackgroundHorizontal: 150
-parallaxBackgroundVertical: 50
+parallaxBackgroundVertical: 200
 ---
+<!-- Export時にfont-awesomeが取り込めてないっぽいのでワークアラウンド -->
+<link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet">
 
 ## リアルタイムサーバーの<br>メトリクス可視化
 
 リアルタイム性が求められるサービスの<br>メトリクス収集・分析・監視ソリューション検討
 
-<div class="fs2rem text-right">
-<br> Kusanagi
-</div>
+<br><br> _Yu Kusanagi_ {.text-right .fs2rem}
 
 ---
 
 ## メトリクス可視化とは
 
-![grafana dashboard demo](media/grafana-dashboard-demo.png){style="width: 70%;" alt="Image description"}
+![grafana dashboard demo](assets/grafana-dashboard-demo.png){style="width: 70%;"}
 
 CPU, メモリ使用量, ネットワークトラフィックなど<br>
 サーバーの状態をデータとして収集・可視化
@@ -112,11 +110,7 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 - Prometheus, InfluxDB など多くのデータソースに対応
 - 古くから存在するが未だに活発（UIおしゃれ）
 - ビジュアライゼーション向けのデータ加工機能が豊富
-- 大体欲しい機能はなんでもある。手放しで採用してよし(2024)
-
----
-
-## 実例の話
+- 大体欲しい機能はなんでもある。手放しで採用してよし(2024 個人の感想)
 
 ---
 
