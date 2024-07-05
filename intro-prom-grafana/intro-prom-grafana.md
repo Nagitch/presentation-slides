@@ -38,7 +38,7 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 
 --
 
-- 一般的なWebサービスではデファクトスタンダードが存在する<br>-> ElasticSearchやPrometheus + Grafana
+- 一般的なWebサービスではデファクトスタンダードが存在する<br>-> [ElasticSearch](https://www.elastic.co/jp/elasticsearch) や[Prometheus](https://prometheus.io/) + [Grafana](https://grafana.com/ja/)
 - リアルタイムサーバーでは何を採用すべきか？
 - **「デファクトはないっすね」**
     - by 某大規模IPタイトルMMOゲームエンジニア{.ls-none .fs2rem}
@@ -89,18 +89,30 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 
 ## Push型 / Pull型について
 
-- **Push型** : サーバー側がデータを送信する
-    - メトリクスサービスのAPIをアプリが叩く
-- **Pull型** : メトリクスサービス側がアプリサーバーのデータを取得しに行く
+--
+
+## Push型: InfluxDBの例
+
+**Push型** : サーバー側がデータを送信する
+
+![grafana dashboard demo](assets/database-type-push.png)
 
 --
 
 ## Pull型: Prometheusの例
 
-- アプリ側に **Prometheus Exporter** プラグインをインストール
-    - `/metrics` HTTPエンドポイントが用意される
-- Prometheusサーバーが定期的(15s間隔とか)に `/metrics` にアクセスし、メトリクスを取得
-- **Prometheusでは、データのタイムスタンプ=アクセス時刻となる**
+- **Pull型** : メトリクスサービス側がアプリサーバーのデータを取得しに行く{.fs2rem}
+- アプリ側に **Prometheus Exporter** プラグインをインストール{.fs2rem}
+    - `/metrics` エンドポイントが生える{.fs2rem}
+- Prometheusサーバーが定期的(15s間隔とか)に `/metrics` にアクセスし、メトリクスを取得{.fs2rem}
+
+![grafana dashboard demo](assets/database-type-pull.png)
+
+--
+
+**Prometheusではデータのタイムスタンプ<br>= アクセス時刻となる**
+- アプリケーションサーバー自身のタイムスタンプをデータとして残せない
+- 関数の実行時間など、msecオーダーの解析にはデータの見せ方に工夫が必要
 
 ---
 
@@ -111,6 +123,13 @@ CPU, メモリ使用量, ネットワークトラフィックなど<br>
 - 古くから存在するが未だに活発（UIおしゃれ）
 - ビジュアライゼーション向けのデータ加工機能が豊富
 - 大体欲しい機能はなんでもある。手放しで採用してよし(2024 個人の感想)
+
+--
+
+## Grafanaのデモ
+
+Sandboxがあるよ
+https://play.grafana.org/
 
 ---
 
